@@ -1,0 +1,74 @@
+@media only screen and (max-width: 1000px) {
+    body {
+      
+    }
+    .nav-bar > li.nav-list > a.router-link-exact-active > span.title{
+      display:none;
+      color : rgba(236, 229, 229, 0.863);
+      font-weight: lighter;
+  }
+    li.nav-list{
+      width : 0;
+    }
+    .nav-bar > li:last-child {
+      font-weight: normal;
+      font-size: 10px;
+  }
+
+  .nav-container{
+    text-align: left;
+    padding-top:20px;
+    border-bottom-left-radius:50%;
+    border-bottom-right-radius:50%;
+    
+  }
+  .g-container{
+    height:600px;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+  }
+  .welcome-content-container{
+    display:flex;
+    flex-direction: column-reverse;
+  }
+  .welcome-content-container:hover .w-img-title:after{
+    border-top: 40px solid rgb(82, 91, 219);
+    border-left: 10px solid transparent;
+    border-bottom: 40px solid transparent;
+    border-right: 10px solid transparent;
+  }
+  .w-img-title:after{
+    display: none;  
+  }
+  .gallery-container{
+    display:flex;
+    
+    flex-direction: column-reverse;
+    
+  }
+
+  .g-contents{
+    box-sizing: border-box;
+    max-width: 50%;
+    width:50%;
+  }
+  .profile{
+    top:15px;
+  }
+
+  .w-message-section{
+    padding-top:1rem;
+  }
+  .greeting-msg{
+    font-size: 1em;
+  }
+  .welcome-content .right-border{
+    border-style : none;
+  }
+  .made-content h4{
+    font-size : 0.8em;
+  }
+  .big{
+    text-align: left;
+  }
+}

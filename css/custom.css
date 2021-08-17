@@ -23,7 +23,8 @@ div#aboutme{
     padding-top:3rem;
 }
 div#contact{
-    padding-top:3rem;
+    padding-top:5rem;
+    min-height:100vh;
 }
 .father-all-of-content{
     background-color:transparent;
