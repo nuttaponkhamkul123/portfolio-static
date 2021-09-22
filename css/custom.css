@@ -18,9 +18,12 @@ div#home{
 }
 div#project_list{
     padding-top:3rem;
+    height:100vh;
+
 }
 div#aboutme{
     padding-top:3rem;
+    height:100vh;
 }
 div#contact{
     padding-top:5rem;
@@ -611,7 +614,7 @@ img.profile{
 }
 .greeting-msg{
     font-weight:lighter;
-    font-size: 1.5em;;
+    font-size: 1em;;
     text-align: center;
     height:100%;
     align-items: center;
