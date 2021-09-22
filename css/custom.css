@@ -7,7 +7,7 @@ body {
     background-repeat: repeat-y;
   }
   * {
-    font-family: 'Cairo', sans-serif;
+    font-family: 'Prompt', sans-serif;
     margin : 0;
     padding : 0;
 
@@ -15,6 +15,7 @@ body {
 }
 div#home{
     padding-top:3rem;
+    
 }
 div#project_list{
     padding-top:3rem;
@@ -199,7 +200,7 @@ img.profile{
     position:fixed;
     top:0;
     z-index: 999;
-    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(198,211,226,1) 100%);
+    background: #D0F069;
 }
 .banner-bg::after{
     content: '';
@@ -303,6 +304,7 @@ img.profile{
 }
 .welcome-content{
     display:relative;
+    height: 100vh;
     word-break: break-word;
 }
 
@@ -464,7 +466,9 @@ img.profile{
 .welcome-container{
     display:flex;
     overflow: hidden;
-    height:50vh;
+    height:40vh;
+    background: #6AD9CA;
+    border-bottom-left-radius: 180px;
 }
 .welcome-content-container{
     padding-top:2em;
@@ -473,10 +477,12 @@ img.profile{
 }
 .w-img-title{
     position:relative;
-    background-color: rgb(82, 91, 219);
+    background-color: #EB5D50;
+    padding-top:4rem;
     text-align: center;
     font-size:2em;
     color:white;
+    border-bottom-right-radius: 130px;
 }
 .w-img-title:after{
     content: '';
@@ -497,14 +503,14 @@ img.profile{
     border-top: 40px solid transparent;
 	border-left: 10px solid transparent;
 	border-bottom: 40px solid transparent;
-	border-right: 40px solid rgb(82, 91, 219);
+	border-right: 40px solid #8E69F0;
 }
 
 .gallery-container:hover .w-img-title:after{
     border-top: 40px solid transparent;
 	border-left: 10px solid transparent;
 	border-bottom: 40px solid transparent;
-	border-right: 40px solid rgb(82, 91, 219);
+	border-right: 40px solid #8E69F0;
 }
 
 .w-item-content{
@@ -535,12 +541,7 @@ img.profile{
 }
 .w-img{
     background:url(https://avatars.githubusercontent.com/u/33547452?v=4);
-    flex : 1;
-    background-position-x: center;
-    Background-size:cover;;
-    background-repeat: no-repeat;
-    object-fit:contain;
-    transition : flex .2s ease;
+
     
     
 }
@@ -609,7 +610,7 @@ img.profile{
 .greeting-title{
     text-align: center;
     font-weight:larger;
-    font-size: 2em;
+    font-size: 3em;
 
 }
 .greeting-msg{
