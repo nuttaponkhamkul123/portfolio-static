@@ -17,7 +17,8 @@
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/mobile.css">
-    <script src="js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.js"></script>
+    
     <title>Document</title>
 </head>
 
@@ -52,22 +53,27 @@
 
     <div class="contents">
         <div id="home" class="welcome-content container">
-
+            
             <br>
             <div class="container-fluid">
                 <div class="welcome-container">
-                    <div class="w-message-section">
-                       
-                        <h2 class="greeting-title"><b>Nuttapon Khamkul's <br> Portfolio</b></h2>
+                    <div class="w-message-section noselect" onclick="add(this)" onmousedown = "mousedown()" onmouseup = "mouseup()" onmouseout="mouseout()">
                         
-                        <p class="greeting-msg">Website for education purpose.</p>
+                        <h2 class="greeting-title noselect"><b>Nuttapon Khamkul's <br> Portfolio</b></h2>
+                        
+                        <p class="greeting-msg noselect">Website for education purpose.
+                            <audio id="pop" src="./effect/pop.mp3"></audio>
+
+
+                        </p>
+                        
                     </div>
                     
                     
     
                 </div>
             </div>
-    
+            <div class = "hidden-elem" ><img id="popcat" src="./images/meme-pop-cat-pack-1.png" width="30px" height="30px"><h1 id="number">0</h1></div>
             <br>
     
             <br />
@@ -376,6 +382,6 @@
 
 </body>
 
-
+<script src="js/script.js"></script>
 
 </html>

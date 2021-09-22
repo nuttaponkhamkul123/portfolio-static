@@ -13,9 +13,22 @@ body {
 
 
 }
-div#home{
-    padding-top:3rem;
-    
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+  }
+h1#number{
+    /* padding-top:3rem; */
+    display:inline;
+    text-align: center;
+}
+.hidden-elem{
+    text-align: center;
 }
 div#project_list{
     padding-top:3rem;
