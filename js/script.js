@@ -16,12 +16,12 @@ function add(){
     let temp = parseInt(number.innerHTML);
     temp += 1;
     number.innerHTML = temp;
-    easter.style.opacity = 1;
+    easter.style.display = "block";
     pop.play();
 }
 
 function mouseout(){
-    easter.style.opacity = 0;
+    easter.style.display = "none";
 }
 function mouseup(){
     popcat.src = "./images/meme-pop-cat-pack-1.png"

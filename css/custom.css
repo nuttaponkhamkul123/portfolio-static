@@ -28,7 +28,14 @@ h1#number{
     text-align: center;
 }
 .hidden-elem{
+    display:none;
     text-align: center;
+}
+.nopadding-left{
+    padding-left: 0;
+}
+.nopadding-right{
+    padding-right: 0;
 }
 div#project_list{
     padding-top:3rem;
