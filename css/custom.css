@@ -210,7 +210,7 @@ img.profile{
 }
 .profile{
     position:relative;
-    z-index:4500;
+    z-index:5500;
     width:200px;
     height:200px;
     border-radius: 100%;
