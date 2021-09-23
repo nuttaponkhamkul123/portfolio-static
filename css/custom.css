@@ -46,6 +46,34 @@ div#aboutme{
     padding-top:3rem;
     height:100vh;
 }
+.power-container{
+    display: grid;
+    grid-template-columns: 0.6fr 2fr 2fr;
+}
+.power-item{
+    padding-left:1em;
+    text-align: right;
+}
+
+.power-image{
+    max-width:100%;
+    max-height: 100%;
+    flex:10%;
+}
+.power-title{
+    font-weight: bolder;
+    text-align: left;
+    font-size:1.5em;
+    padding-top:1em;
+}
+.power-msg-section{
+    display:flex;
+}
+.power-msg{
+    flex:60%;
+    padding-right:2em;
+}
+
 div#contact{
     padding-top:5rem;
     min-height:100vh;
@@ -168,19 +196,7 @@ li.nav-list > .nav-link:hover > .nav-container{
 }
 
 
-.lock-height{
-    
-    
-}
 
-
-.contents{
-    
-    
-}
-.content{
-    
-}
 .contents h1 {
     text-transform: uppercase;
 }
@@ -215,12 +231,17 @@ img.profile{
 .profile-container h1{
     display : inline;
 }
-
+#test{
+    position: absolute;
+    width:100%;
+    height:100%;
+    z-index: 999;
+}
 .banner-bg{
     position:fixed;
     top:0;
     z-index: 999;
-    background: #D0F069;
+    background: #f07167;
 }
 .banner-bg::after{
     content: '';
@@ -307,6 +328,15 @@ img.profile{
     max-width: 100%; height: 250px;
 
 }
+.p-img-title{
+    position:relative;
+    background-color: #fdfcdc;
+    padding-top:4rem;
+    min-width: 100%;
+    text-align: center;
+    font-size:1.5rem;
+    border-bottom-left-radius: 130px;
+}
 .project-item:hover{
     position:relative;
     cursor: pointer;
@@ -330,7 +360,7 @@ img.profile{
 
 .gallery-img{
     width:100%;
-    height:200px;
+    height:100%;
     margin-left:0;
     margin-right:0;
 }
@@ -487,8 +517,10 @@ img.profile{
     display:flex;
     overflow: hidden;
     height:40vh;
-    background: #6AD9CA;
+    background: #00afb9;
     border-bottom-left-radius: 180px;
+    z-index: 1000;
+
 }
 .welcome-content-container{
     padding-top:2em;
@@ -497,11 +529,11 @@ img.profile{
 }
 .w-img-title{
     position:relative;
-    background-color: #EB5D50;
+    background-color: #fed9b7;
     padding-top:4rem;
     text-align: center;
     font-size:2em;
-    color:white;
+
     border-bottom-right-radius: 130px;
 }
 .w-img-title:after{
@@ -570,6 +602,7 @@ img.profile{
     min-height:150px;
     align-items: center;
     padding-top:5rem;
+    z-index:1000;
 }
 .welcome-container:hover .w-img{
     flex : 0.5;
@@ -578,10 +611,15 @@ img.profile{
 
 .gallery-container{
     display:grid;
-    grid-template-columns: 3fr .5fr;
+    grid-template-columns: minmax(0, 3fr) .5fr;
 }
 .g-container{
     display:flex;align-items: stretch;justify-content: flex-end;
+    height:25vh;
+}
+.g-container-left{
+    display:flex;align-items: stretch;justify-content: flex-start;
+    height:25vh;
 }
 .fullwidth{
     width:100vw;

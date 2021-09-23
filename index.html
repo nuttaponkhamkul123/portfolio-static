@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+        <script src="./js/simpleParallax.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/mobile.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.js"></script>
@@ -50,13 +51,15 @@
         </div>
         <!-- end navigation -->
         <!-- contents -->
-
+        
     <div class="contents">
+        
         <div id="home" class="welcome-content container">
             
             <br>
             <div class="container-fluid nopadding-right">
                 <div class="welcome-container">
+                    <canvas id = "test"></canvas>
                     <div class="w-message-section noselect" onclick="add(this)" onmousedown = "mousedown()" onmouseup = "mouseup()" onmouseout="mouseout()">
                         
                         <h2 class="greeting-title noselect"><b>Nuttapon Khamkul's <br> Portfolio</b></h2>
@@ -113,9 +116,49 @@
                             <h2>Image</h2>
                         </div>
                     </div>
+                    <div class="g-contents">
+                        <img class="gallery-img"
+                            src="./images/img4.jpg"
+                            alt="">
+                        <div class="gim ">
+                            <h2>Image</h2>
+                        </div>
+                    </div>
     
                 </div>
                 <div class="w-img-title">Gallery</div>
+    
+            </div>
+    
+    
+        
+            <!-- end welcome-->
+            <div class="power-container">
+                <div class="g-container-left">
+                    <div class="p-img-title">Powered <br>by</div>
+                    
+    
+                </div>
+                <div class="power-item">
+                    <p class="power-title">Javascript</p>
+                    <div class="power-msg-section">
+                        <p class="power-msg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima aliquid repellat accusantium libero dolores placeat doloremque excepturi illo, porro praesentium?</p>
+                        
+                    </div>
+                    
+                    
+                    
+                </div>
+                <div class="power-item">
+                   <p class="power-title">CSS</p> 
+                   <div class="power-msg-section">
+                        <p class="power-msg">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid harum molestias quos, facere modi vero iusto a odit quod omnis?</p>
+                        
+                   </div>
+                   
+                   
+
+                </div>
     
             </div>
     
@@ -380,5 +423,41 @@
 </body>
 
 <script src="js/script.js"></script>
+<script>
+    const scene = new THREE.Scene();
+			const camera = new THREE.PerspectiveCamera( 10000, window.innerWidth / window.innerHeight, 0.5, 1000 );
+            const canvas = document.querySelector("#test");
+			const renderer = new THREE.WebGLRenderer({canvas,
+            alpha:true});
+			renderer.setSize( canvas.parentNode.parentElement.offsetWidth, canvas.parentNode.parentElement.offsetHeight );
+            console.log(canvas.parentNode.parentElement.clientWidth)
+            console.log(canvas.parentNode.parentElement.clientHeight)
+            
+			//document.body.appendChild( renderer.domElement );
 
+			const geometry = new THREE.BoxGeometry();
+			const material = new THREE.MeshBasicMaterial( { color: 0xfcba03 } );
+			const cube = new THREE.Mesh( geometry, material );
+            const material1 = new THREE.MeshBasicMaterial( { color: 0x5203ff } );
+            const cube1 = new THREE.Mesh( geometry, material1 );
+            cube1.position.x = 3;
+			scene.add( cube );
+            scene.add( cube1 );
+
+			camera.position.z = 6;
+
+			const animate = function () {
+				requestAnimationFrame( animate );
+
+				cube.rotation.x += 0.01;
+				cube.rotation.y += 0.01;
+				cube1.rotation.x += 0.02;
+				cube1.rotation.y += 0.02;
+
+				renderer.render( scene, camera );
+                
+			};
+
+			animate();
+</script>
 </html>
