@@ -440,9 +440,16 @@
 			const cube = new THREE.Mesh( geometry, material );
             const material1 = new THREE.MeshBasicMaterial( { color: 0x5203ff } );
             const cube1 = new THREE.Mesh( geometry, material1 );
+
+            const octa = new THREE.OctahedronGeometry();
+            const material2 = new THREE.MeshBasicMaterial( { color: 0x07de40 } );
+            const octaGeo = new THREE.Mesh(octa,material2);
+
             cube1.position.x = 3;
+            octaGeo.position.x = -3;
 			scene.add( cube );
             scene.add( cube1 );
+            scene.add( octaGeo );
 
 			camera.position.z = 6;
 
@@ -453,7 +460,7 @@
 				cube.rotation.y += 0.01;
 				cube1.rotation.x += 0.02;
 				cube1.rotation.y += 0.02;
-
+                octaGeo.rotation.x += 0.01;
 				renderer.render( scene, camera );
                 
 			};

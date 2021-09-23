@@ -126,6 +126,7 @@ div#contact{
     display:inline;
     justify-content: center;
     transition : background-color .5s ease;
+    z-index : 20000;
 }
 .nav-bar > li.nav-list > a > span.title{
     display:none;
@@ -240,7 +241,7 @@ img.profile{
 .banner-bg{
     position:fixed;
     top:0;
-    z-index: 999;
+    z-index: 5000;
     background: #f07167;
 }
 .banner-bg::after{
