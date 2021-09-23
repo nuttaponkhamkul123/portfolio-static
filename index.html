@@ -425,7 +425,7 @@
 <script src="js/script.js"></script>
 <script>
     const scene = new THREE.Scene();
-			const camera = new THREE.PerspectiveCamera( 10000, window.innerWidth / window.innerHeight, 0.5, 1000 );
+			const camera = new THREE.PerspectiveCamera( 1000, 2, 1, 1000 );
             const canvas = document.querySelector("#test");
 			const renderer = new THREE.WebGLRenderer({canvas,
             alpha:true});
@@ -434,37 +434,99 @@
             console.log(canvas.parentNode.parentElement.clientHeight)
             
 			//document.body.appendChild( renderer.domElement );
-
+            
+            //cube
 			const geometry = new THREE.BoxGeometry();
-			const material = new THREE.MeshBasicMaterial( { color: 0xfcba03 } );
+			const material = new THREE.MeshStandardMaterial( { color: 0xfcba03,roughness:0.1 } );
 			const cube = new THREE.Mesh( geometry, material );
-            const material1 = new THREE.MeshBasicMaterial( { color: 0x5203ff } );
-            const cube1 = new THREE.Mesh( geometry, material1 );
 
-            const octa = new THREE.OctahedronGeometry();
-            const material2 = new THREE.MeshBasicMaterial( { color: 0x07de40 } );
-            const octaGeo = new THREE.Mesh(octa,material2);
+            // //cube
+            // const material1 = new THREE.MeshStandardMaterial( { color: 0x5203ff } );
+            // const cube1 = new THREE.Mesh( geometry, material1 );
 
-            cube1.position.x = 3;
-            octaGeo.position.x = -3;
-			scene.add( cube );
-            scene.add( cube1 );
-            scene.add( octaGeo );
+            // //octa
+            // const octa = new THREE.OctahedronGeometry();
+            // const material2 = new THREE.MeshStandardMaterial( { color: 0x07de40 } );
+            // const octaGeo = new THREE.Mesh(octa,material2);
 
+
+            // //cylinder
+            // const cy = new THREE.CylinderGeometry( 0.2, 0.2, 10, 16 );
+            // const materialCy = new THREE.MeshStandardMaterial( {color: 0xddff00} );
+            // const cylinder = new THREE.Mesh( cy, materialCy );
+            
+            // cube1.position.x = 3;
+            // octaGeo.position.x = -3;
+            // cylinder.position.x = -6;
+            // cylinder.position.z = -6;
+            // cylinder.position.x = -12;
+            const light = new THREE.PointLight( 0xd1e35d, 2, 1000 );
+            light.position.set( 80, 0, 90 );
+            scene.add( light );
+			// scene.add( cube );
+            // scene.add( cube1 );
+            // scene.add( octaGeo );
+            // scene.add( cylinder );
+            function getRandomArbitrary(min, max) {
+                return Math.random() * (max - min) + min;
+            }
+
+            
+            function getRandomInt(min, max) {
+                min = Math.ceil(min);
+                max = Math.floor(max);
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+            // let ico = new THREE.IcosahedronGeometry();
+            // let mat = new THREE.MeshStandardMaterial( {color: 0xee05fa} );
+            // let icoMesh = new THREE.Mesh(ico,mat);
+            // icoMesh.position.x = 1;
+            // scene.add(cube)
+            // scene.add(icoMesh)
+            // console.log(scene)
+            let icosa = [];
+            
+            for(let i = 0 ; i < 5 ;i++){
+                let ico = new THREE.IcosahedronGeometry();
+                const randomColor = Math.floor(Math.random()*16777215).toString(16);
+                let mat = new THREE.MeshStandardMaterial( {color: "#"+randomColor} );
+                let icoMesh = new THREE.Mesh(ico,mat);
+
+                icoMesh.position.x = getRandomInt(-8, 8);
+                icoMesh.position.y = getRandomInt(-2, 2);
+                icoMesh.position.z = getRandomInt(-1, 1);
+                icosa.push(icoMesh);
+
+                scene.add(icosa[i])
+                
+            }
 			camera.position.z = 6;
+            
+  
+            
 
 			const animate = function () {
 				requestAnimationFrame( animate );
 
-				cube.rotation.x += 0.01;
-				cube.rotation.y += 0.01;
-				cube1.rotation.x += 0.02;
-				cube1.rotation.y += 0.02;
-                octaGeo.rotation.x += 0.01;
+				for(let i = 0 ;i < 5;i++){
+                    icosa[i].rotation.x += 0.03;
+                    icosa[i].rotation.y += Math.floor(Math.random() * 1);
+                    icosa[i].rotation.z += Math.floor(Math.random() * 1);
+                    // icosa[i].translateX((Math.random() * 0.5));
+                    if(icosa[i].position.x <= 15){
+                        icosa[i].position.x += 0.05;
+                        if(icosa[i].position.x > 15){
+                            
+                            setTimeout(function(){icosa[i].position.x = -15; }, 2000);
+                        }
+                    }
+                        
+                    
+                }
 				renderer.render( scene, camera );
                 
 			};
 
-			animate();
+			 animate();
 </script>
 </html>
