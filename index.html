@@ -440,26 +440,16 @@
 			const material = new THREE.MeshStandardMaterial( { color: 0xfcba03,roughness:0.1 } );
 			const cube = new THREE.Mesh( geometry, material );
 
-            // //cube
-            // const material1 = new THREE.MeshStandardMaterial( { color: 0x5203ff } );
-            // const cube1 = new THREE.Mesh( geometry, material1 );
-
-            // //octa
-            // const octa = new THREE.OctahedronGeometry();
-            // const material2 = new THREE.MeshStandardMaterial( { color: 0x07de40 } );
-            // const octaGeo = new THREE.Mesh(octa,material2);
-
-
-            // //cylinder
-            // const cy = new THREE.CylinderGeometry( 0.2, 0.2, 10, 16 );
-            // const materialCy = new THREE.MeshStandardMaterial( {color: 0xddff00} );
-            // const cylinder = new THREE.Mesh( cy, materialCy );
             
-            // cube1.position.x = 3;
-            // octaGeo.position.x = -3;
-            // cylinder.position.x = -6;
-            // cylinder.position.z = -6;
-            // cylinder.position.x = -12;
+            window.addEventListener( 'resize', onWindowResize, false );
+
+            function onWindowResize(){
+                    camera.aspect = window.innerWidth / window.innerHeight;
+                    camera.updateProjectionMatrix();
+                    renderer.setSize( canvas.parentNode.parentElement.offsetWidth, canvas.parentNode.parentElement.offsetHeight );
+
+            }
+
             const light = new THREE.PointLight( 0xd1e35d, 2, 1000 );
             light.position.set( 80, 0, 90 );
             scene.add( light );
