@@ -2,6 +2,9 @@
     body {
       
     }
+    .welcome-content{
+      height:auto;
+    }
     .nav-bar > li.nav-list > a.router-link-exact-active > span.title{
       display:none;
       color : rgba(236, 229, 229, 0.863);
@@ -24,12 +27,16 @@
   }
   .g-container{
     height:600px;
-    flex-direction: column-reverse;
+    flex-direction: row-reverse;
     flex-wrap: wrap;
+    overflow:scroll;
   }
   .welcome-content-container{
     display:flex;
     flex-direction: column-reverse;
+  }
+  .w-img-title{
+    border-bottom-right-radius: 0;
   }
   .welcome-content-container:hover .w-img-title:after{
     border-top: 40px solid rgb(82, 91, 219);
@@ -42,15 +49,18 @@
   }
   .gallery-container{
     display:flex;
-    
     flex-direction: column-reverse;
+    flex-wrap: nowrap;
     
   }
-
+.gallery-img{
+    max-width:200px;
+    max-height:200px;
+}
   .g-contents{
     box-sizing: border-box;
     max-width: 50%;
-    width:50%;
+    height:auto;
   }
   .profile{
     top:15px;
