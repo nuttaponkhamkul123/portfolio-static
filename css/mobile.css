@@ -35,8 +35,13 @@
     display:flex;
     flex-direction: column-reverse;
   }
+
+  .welcome-container{
+    border-bottom-left-radius: 0;
+  }
   .w-img-title{
     border-bottom-right-radius: 0;
+    padding-top:2rem;
   }
   .welcome-content-container:hover .w-img-title:after{
     border-top: 40px solid rgb(82, 91, 219);
@@ -67,7 +72,10 @@
   }
 
   .w-message-section{
-    padding-top:1rem;
+    padding-top:3rem;
+  }
+  .greeting-title{
+    font-size:2rem;
   }
   .greeting-msg{
     font-size: 1em;
@@ -80,5 +88,20 @@
   }
   .big{
     text-align: left;
+  }
+  div#aboutme{
+    height:auto;
+  }
+  div#contact{
+    min-height: auto;
+    height:auto;
+  }
+  .power-container{
+    display:block;
+    
+  }
+  .p-img-title{
+    border-bottom-left-radius: 0;
+    padding-top:2rem;
   }
 }
