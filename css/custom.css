@@ -72,7 +72,25 @@ div#aboutme{
 .power-msg{
     flex:60%;
     padding-right:2em;
+    text-align: left;
 }
+.pinfo{
+    height: 100vh;
+    z-index: 3000000;
+    top:0;
+    left:0;
+    display:none;
+    position:fixed;
+    color:white;
+    width:100vw;
+    background-color: rgba(0,0,0,0.5);
+    transition: display 3s linear;
+}
+
+.pinfo:active{
+    background-color: green;
+}
+
 
 div#contact{
     padding-top:5rem;

@@ -6,12 +6,30 @@ var number = document.getElementById("number");
 var button = document.getElementById("clickme");
 var pop = document.getElementById("pop");
 var btn = document.querySelectorAll("a.nav-item");
+const PROJECT_DETAIL = [
+    {
+        id: 0,
+        "title" : "Parcel Management",
+        "description" : "this project was created by me.<br> After my dad told me to do it for his job"
+    },
+    {
+        id: 1,
+        "title" : "CS251 Final Project",
+        "description" : "Computer part E-commerce using PHP and mySQL "
+    }
+
+]
 
 // just a random junk number
 console.log(Math.ceil(Math.random()*10));
-
-
 console.log(btn[1].innerHTML)
+
+
+//pinfo click event 
+let pinfo = document.querySelector(".pinfo");
+pinfo.addEventListener("click" ,function(){
+    pinfo.style.display = "none";
+})
 function nav(number){
     console.log("nav")
     for(let i = 0 ; i < 3 ; i++){
@@ -38,4 +56,19 @@ function mouseup(){
 }
 function mousedown(){
     popcat.src = "./images/meme-pop-cat-pack-2.png"
+}
+
+function pdetail(number){
+    let infbox = document.querySelector(".pinfo");
+    
+    for(let i = 0 ; i < PROJECT_DETAIL.length;i++){
+        if (PROJECT_DETAIL[i].id === number){
+            
+            let inf_title = infbox.querySelector(".pinfo-title")
+            let inf_desc = infbox.querySelector(".pinfo-desc")
+            inf_title.innerHTML = PROJECT_DETAIL[i].title
+            inf_desc.innerHTML = PROJECT_DETAIL[i].description
+            infbox.style.display = "block";
+        }
+    }
 }
