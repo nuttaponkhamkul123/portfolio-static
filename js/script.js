@@ -11,12 +11,16 @@ const PROJECT_DETAIL = [
     {
         id: 0,
         "title" : "Parcel Management",
-        "description" : "this project was created by me.<br> After my dad told me to do it for his job"
+        "description" : "this project was created by me.<br> After my dad told me to do it for his job",
+        "link" : "https://github.com/nuttaponkhamkul123/parcel1.0",
+        "img" : "./images/proj1.png"
     },
     {
         id: 1,
         "title" : "CS251 Final Project",
-        "description" : "Computer part E-commerce using PHP and mySQL "
+        "description" : "Computer part E-commerce using PHP and mySQL ",
+        "link" : "https://github.com/nuttaponkhamkul123/bij",
+        "img" : "./images/proj2.png"
     }
 
 ]
@@ -62,9 +66,8 @@ function mousedown(){
 function pdetail(number){
     let infbox = document.querySelector(".pinfo");
     infbox.classList.add("project-animate")
-    // document.querySelectorAll(".p-img")[number].style.zIndex = "10000000";
-    // document.querySelectorAll(".p-img")[number].style.transform = "scale(2,2)"
-    document.querySelectorAll(".project-item")[number].classList.add("pdetail-animation")
+
+    document.querySelector(".pd-box.pd-img > img").src = PROJECT_DETAIL[number].img + ""
     for(let i = 0 ; i < PROJECT_DETAIL.length;i++){
         if (PROJECT_DETAIL[i].id === number){
             infbox.classList.toggle("project-animate")
@@ -75,7 +78,7 @@ function pdetail(number){
             infbox.style.display = "block";
             infbox.addEventListener("click", function(){ 
                 infbox.classList.remove("project-animate")
-                document.querySelectorAll(".project-item")[number].classList.remove("pdetail-animation")
+                // document.querySelectorAll(".project-item")[number].classList.remove("pdetail-animation")
             })
         }
     }

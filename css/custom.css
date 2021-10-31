@@ -75,20 +75,12 @@ div#aboutme{
     text-align: left;
 }
 .project-contents{
-    display:grid;
     position:relative;
-    grid-template-columns: 1fr 1fr 1fr;
     gap:5px;
 }
-.pdetail-animation{
-    z-index: 10000000;
-    position:fixed;
-    top:50%;
 
-    
-    
-    
-}
+
+
 .pinfo{
     min-height: 100vh;
     z-index: 10000000;
@@ -102,16 +94,32 @@ div#aboutme{
     transition : min-height 1s ease-in;
 }
 .pd-contents{
+    position:relative;
+    padding-top:10%;
     background-color: rgba(0,0,0,0.5);
     height: 100vh;
-    text-align: center;    
+    text-align: center;
+        
 }
-.pd-contents > div{
-    position:absolute;
-    top:50%;
-    left:25%;
+.pd-box{
+    margin:auto;
+    padding:10px;
+    border-radius: 10px;
+    display:inline-block;
+    background-color:white;
+    color:black;
+    
 }
 
+.pd-box.pd-img{
+    max-width:100%; 
+    height: 300px;
+    
+}
+.pd-box.pd-img > img{
+    max-width: 100%;
+    max-height: 100%;
+}
 .project-animate{
     min-height: 50vh;
 }
@@ -319,11 +327,11 @@ img.profile{
 }
 .project-item{
     position:relative;
+    flex:20%;
     width:100%;
     height:250px;
     padding-right:5px;
     max-height : 250px;
-    box-sizing: border-box;
     background-color: rgb(172, 156, 156);
     
     
@@ -366,6 +374,7 @@ img.profile{
     height: 300px;
     border: 1px solid black;
 }
+
 .p-img{
     position:absolute;
     top:0;
@@ -374,6 +383,8 @@ img.profile{
     max-width: 100%; height: 100%;
 
 }
+
+
 .p-img-title{
     position:relative;
     background-color: #fdfcdc;
