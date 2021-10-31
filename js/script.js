@@ -11,7 +11,7 @@ const PROJECT_DETAIL = [
     {
         id: 0,
         "title" : "Parcel Management",
-        "description" : "this project was created by me.<br> After my dad told me to do it for his job",
+        "description" : "This project was created by me.<br> After my dad told me to do it for his job",
         "link" : "https://github.com/nuttaponkhamkul123/parcel1.0",
         "img" : "./images/proj1.png"
     },
