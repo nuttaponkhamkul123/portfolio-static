@@ -6,6 +6,7 @@ var number = document.getElementById("number");
 var button = document.getElementById("clickme");
 var pop = document.getElementById("pop");
 var btn = document.querySelectorAll("a.nav-item");
+var pitem = document.querySelectorAll(".project-item")
 const PROJECT_DETAIL = [
     {
         id: 0,
@@ -60,15 +61,23 @@ function mousedown(){
 
 function pdetail(number){
     let infbox = document.querySelector(".pinfo");
-    
+    infbox.classList.add("project-animate")
+    // document.querySelectorAll(".p-img")[number].style.zIndex = "10000000";
+    // document.querySelectorAll(".p-img")[number].style.transform = "scale(2,2)"
+    document.querySelectorAll(".project-item")[number].classList.add("pdetail-animation")
     for(let i = 0 ; i < PROJECT_DETAIL.length;i++){
         if (PROJECT_DETAIL[i].id === number){
-            
+            infbox.classList.toggle("project-animate")
             let inf_title = infbox.querySelector(".pinfo-title")
             let inf_desc = infbox.querySelector(".pinfo-desc")
             inf_title.innerHTML = PROJECT_DETAIL[i].title
             inf_desc.innerHTML = PROJECT_DETAIL[i].description
             infbox.style.display = "block";
+            infbox.addEventListener("click", function(){ 
+                infbox.classList.remove("project-animate")
+                document.querySelectorAll(".project-item")[number].classList.remove("pdetail-animation")
+            })
         }
     }
 }
+
